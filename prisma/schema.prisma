@@ -1,0 +1,61 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum bias {
+    LEFT
+    LEAN_LEFT
+    CENTRE
+    LEAN_RIGHT
+    RIGHT
+}
+
+
+model Article {
+  id            String                 @id @default(cuid())
+  url           String                 @unique
+  title         String
+  description   String?
+  content       String?
+  author        String?
+  imageUrl      String?
+  publishedAt   DateTime?
+  createdAt     DateTime               @default(now())
+  hashedContent String?
+  embedding     Unsupported("vector")?
+
+  clusterId String?
+  cluster StoryCluster? @relation(fields: [clusterId],references: [id])
+
+  outletId String
+  outlet Outlet @relation(fields: [outletId] , references: [id])
+
+}
+
+
+model StoryCluster{
+  id String @id @default(cuid())
+  articles Article[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+model Outlet{
+  id String @id @default(cuid())
+  name String
+  domain String @unique
+  articles Article[] 
+
+
+  bias bias?
+  factualityScore Float?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

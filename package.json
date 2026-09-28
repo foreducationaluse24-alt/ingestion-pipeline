@@ -1,0 +1,43 @@
+{
+  "name": "ingestion-pipeline",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev" : "tsx src/index.ts",
+    "scheduler" : "tsx src/workers/schedulerWorker.ts",
+    "worker" : "tsx src/workers/feedWorkers.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.20.0",
+      "onFail": "download"
+    }
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "prisma": "^7.10.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@extractus/article-extractor": "jsr:9.0.1-rc2",
+    "@huggingface/transformers": "^4.2.0",
+    "@prisma/adapter-pg": "^7.10.0",
+    "@prisma/client": "^7.10.0",
+    "dotenv": "^18.0.4",
+    "axios": "^1.20.0",
+    "bullmq": "^6.3.7",
+    "cheerio": "^1.2.0",
+    "ioredis": "^6.0.0",
+    "p-limit": "^7.3.2",
+    "pg": "^8.23.0",
+    "pgvector": "^0.3.0",
+     "rss-parser": "^3.13.0"
+  }
+}
