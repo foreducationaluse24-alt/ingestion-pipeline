@@ -4,6 +4,7 @@ interface FeedSource {
   domain: string;
 }
 
+
 export const feeds: FeedSource[] = [
   {
     name: "Hindustan Times",
@@ -27,8 +28,41 @@ export const feeds: FeedSource[] = [
   },
 ];
 
-//
-//https://indianexpress.com/feed
-//the hindu 
-//bbc
-//hindustan times
+/*
+https://www.firstpost.com/rss/india.xml                 
+https://www.firstpost.com/commonfeeds/v1/mfp/rss/india.xml                #200    
+
+
+https://www.freepressjournal.in/stories.rss                               #128
+
+https://economictimes.indiatimes.com/rssfeedsdefault.cms" 
+
+https://feeds.feedburner.com/ndtvnews-top-stories                          #20
+https://feeds.feedburner.com/ndtvnews-india-news        india news
+
+https://www.deccanchronicle.com/feeds.xml                                   #485
+https://www.nationalheraldindia.com/stories.rss?section=news                #11
+https://www.nationalheraldindia.com/stories.rss                             #11   (prefer)
+
+https://feeds.washingtonpost.com/rss/world                                  #10
+
+http://rss.cnn.com/rss/cnn_world.rss
+
+https://timesofindia.indiatimes.com/rssfeedstopstories.cms          //top stories
+https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms       //india specific
+
+https://indianexpress.com/section/india/feed/
+
+
+https://www.indiatoday.in/rss/1206514          // nation
+https://www.indiatoday.in/rss/home            // (home)prefer
+
+
+https://www.indiatvnews.com/rssnews/topstory.xml     top stories  
+https://www.indiatvnews.com/rssnews/topstory-india.xml    india           10
+
+
+https://publish.tribuneindia.com/newscategory/nation/feed/        india
+https://publish.tribuneindia.com/newscategory/top-headlines/feed/       top news
+
+*/
