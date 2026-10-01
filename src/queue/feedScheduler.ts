@@ -5,7 +5,7 @@ async function startScheduler() {
   await schedulerQueue.upsertJobScheduler(
     "feed-scheduler", //name fo schedule queue
     {
-      every: 10 * 60 * 1000,
+      every: 30 * 60 * 1000,
     },
     {
       name: "process-feeds", //name fo job in schedule queue

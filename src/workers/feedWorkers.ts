@@ -46,7 +46,7 @@ const feedWorker = new Worker(
   },
   {
     connection,
-    concurrency: 1, //It means this worker can process up to 3 jobs at the same time.
+    concurrency: 3, //It means this worker can process up to 3 jobs at the same time.
   },
 );
 

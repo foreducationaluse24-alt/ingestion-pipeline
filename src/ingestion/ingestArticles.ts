@@ -8,6 +8,7 @@ import { Prisma } from "../../generated/prisma/client";
 import { articleExtracter } from "./extractArticle";
 import { parseArticleDate } from "./dateValidation";
 import { getOrCreateoutlet } from "../outlets/getOrCreateoutlet"; 
+import { getPublisherConfig } from "../config/publisherConfig";
 
 export interface NormalizedArticle {
   url: string;
@@ -60,7 +61,9 @@ export async function IngestionArticles(
   source: string,
   domain : string
 ) {
-  const limit = pLimit(5);
+
+  const config = getPublisherConfig(domain);
+  const limit = pLimit(config.concurrency);
 
   //allsetteled did not stop even when one promise get failed
   const result = await Promise.allSettled(
@@ -91,6 +94,11 @@ export async function IngestionArticles(
           if (!article) {
             return { status: "invalid" };
           }
+
+          if(config.minDelayMs > 0){
+            await new Promise(resolve => setTimeout(resolve,config.minDelayMs))
+          }
+
           //------------------------------------------
           // console.log("SOURCE:", source);
           // console.log("URL:", url);

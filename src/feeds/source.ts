@@ -26,6 +26,36 @@ export const feeds: FeedSource[] = [
     rssUrl: "https://indianexpress.com/section/india/feed/",
     domain: "indianexpress.com",
   },
+  {
+    name: "Firstpost",
+    rssUrl: "https://www.firstpost.com/commonfeeds/v1/mfp/rss/india.xml",
+    domain: "firstpost.com",
+  },
+  {
+    name: "NDTV News",
+    rssUrl: "https://feeds.feedburner.com/ndtvnews-top-stories",
+    domain: "ndtv.com",
+  },
+  {
+    name: "FreepressJournal",
+    rssUrl: "https://www.freepressjournal.in/stories.rss",
+    domain: "freepressjournal.in",
+  },
+  {
+    name: "Times Of India",
+    rssUrl: "https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms",
+    domain: "timesofindia.com",
+  },
+  {
+    name: "India TV News",
+    rssUrl: "https://www.indiatvnews.com/rssnews/topstory-india.xml",
+    domain: "indiatvnews.com",
+  },
+  {
+    name: "Tribune India News",
+    rssUrl: "https://publish.tribuneindia.com/newscategory/top-headlines/feed/ ",
+    domain: "tribuneindia.com",
+  },
 ];
 
 /*
