@@ -56,6 +56,11 @@ export const feeds: FeedSource[] = [
     rssUrl: "https://publish.tribuneindia.com/newscategory/top-headlines/feed/ ",
     domain: "tribuneindia.com",
   },
+  {
+    name: "the Wire(politics)",
+    rssUrl: "https://science.thewire.in/category/politics/feed/",     //politics
+    domain: "thewire.in",
+  },
 ];
 
 /*
@@ -96,3 +101,22 @@ https://publish.tribuneindia.com/newscategory/nation/feed/        india
 https://publish.tribuneindia.com/newscategory/top-headlines/feed/       top news
 
 */
+
+
+
+
+//  {
+//     name: "the Wire(external-affairs)",
+//     rssUrl: "https://science.thewire.in/category/external-affairs/feed/",     //politics
+//     domain: "thewire.in",
+//   },
+//   {
+//     name: "the Wire(tech)",
+//     rssUrl: "https://science.thewire.in/category/tech/feed/",     //politics
+//     domain: "thewire.in",
+//   },
+//   {
+//     name: "the Wire(govn)",
+//     rssUrl: "https://science.thewire.in/category/government/feed/",     //politics
+//     domain: "thewire.in",
+//   },

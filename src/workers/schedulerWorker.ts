@@ -16,7 +16,7 @@ const shedularWorker = new Worker("feed-scheduler",
         
     },
     {
-        connection 
+        connection ,
     }
 )
 

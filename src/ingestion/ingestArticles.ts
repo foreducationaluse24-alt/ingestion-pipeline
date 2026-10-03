@@ -9,6 +9,7 @@ import { articleExtracter } from "./extractArticle";
 import { parseArticleDate } from "./dateValidation";
 import { getOrCreateoutlet } from "../outlets/getOrCreateoutlet"; 
 import { getPublisherConfig } from "../config/publisherConfig";
+import { articleAnalysisQueue } from "../queue/articleAnalysisQueue";
 
 export interface NormalizedArticle {
   url: string;
@@ -144,6 +145,11 @@ export async function IngestionArticles(
           const createdArticle = await prisma.article.create({
             data: normalizedArticle,
           });
+
+          //adding to queue
+          await articleAnalysisQueue.add("analyze-article",{
+            articleId : createdArticle.id
+          })
 
           return { status: "inserted", articleId: createdArticle.id };
         } catch (err) {

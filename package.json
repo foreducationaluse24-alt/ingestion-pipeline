@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev" : "tsx src/index.ts",
-    "scheduler" : "tsx src/workers/schedulerWorker.ts",
-    "worker" : "tsx src/workers/feedWorkers.ts",
-    "outletBiasFill" : "tsx src/outlets/outletBiasFill.ts",
-    "cleanFeedQueue" : "tsx src/queue/test/cleanFeedQueue.ts",
-    "cleanScheduleQueue" : "tsx src/queue/test/cleanscheduleQueue.ts",
-    "feedQueue" : "tsx src/queue/test/checkFeedQueue.ts",
-    "scheduleQueue" : "tsx src/queue/test/checkFeedQueue.ts"
+    "dev": "tsx src/index.ts",
+    "scheduler": "tsx src/workers/schedulerWorker.ts",
+    "worker": "tsx src/workers/feedWorkers.ts",
+    "outletBiasFill": "tsx src/outlets/outletBiasFill.ts",
+    "cleanFeedQueue": "tsx src/queue/test/cleanFeedQueue.ts",
+    "cleanScheduleQueue": "tsx src/queue/test/cleanscheduleQueue.ts",
+    "feedQueue": "tsx src/queue/test/checkFeedQueue.ts",
+    "scheduleQueue": "tsx src/queue/test/checkFeedQueue.ts",
+    "articleAnalysis:test": "tsx src/queue/test/testAnalysisQueue.ts",
+    "articleAnalysis:worker": "tsx src/workers/articleAnalysisWorker.ts"
   },
   "keywords": [],
   "author": "",
@@ -35,14 +37,15 @@
     "@huggingface/transformers": "^4.2.0",
     "@prisma/adapter-pg": "^7.10.0",
     "@prisma/client": "^7.10.0",
-    "dotenv": "^18.0.4",
+    "afinn-165": "^2.0.2",
     "axios": "^1.20.0",
     "bullmq": "^6.3.7",
     "cheerio": "^1.2.0",
+    "dotenv": "^18.0.4",
     "ioredis": "^6.0.0",
     "p-limit": "^7.3.2",
     "pg": "^8.23.0",
     "pgvector": "^0.3.0",
-     "rss-parser": "^3.13.0"
+    "rss-parser": "^3.13.0"
   }
 }

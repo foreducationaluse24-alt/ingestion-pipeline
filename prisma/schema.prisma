@@ -23,6 +23,12 @@ model Article {
   outletId      String
   cluster       StoryCluster?          @relation(fields: [clusterId], references: [id])
   outlet        Outlet                 @relation(fields: [outletId], references: [id])
+
+  loadedWordCount      Int?
+  emotionalWordCount   Int?
+  sensationalWordCount Int?
+  authorOpinion        Boolean?
+  attributionQuality   AttributionQuality?
 }
 
 model StoryCluster {
@@ -33,18 +39,18 @@ model StoryCluster {
 }
 
 model Outlet {
-  id              String    @id @default(cuid())
+  id              String   @id @default(cuid())
   name            String
-  domain          String    @unique
+  domain          String   @unique
   country         String?
-  createdAt       DateTime  @default(now())
-  updatedAt       DateTime  @updatedAt
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
   factualityScore Float?
   bias            bias?
   biasSource      String?
   biasSourceUrl   String?
 
-  articles        Article[]
+  articles Article[]
 }
 
 enum bias {
@@ -53,4 +59,10 @@ enum bias {
   CENTRE
   LEAN_RIGHT
   RIGHT
+}
+
+enum AttributionQuality {
+  HIGH
+  LOW
+  MEDIUM
 }
